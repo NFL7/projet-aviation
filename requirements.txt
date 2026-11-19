@@ -1,0 +1,5 @@
+dash>=3.0
+plotly>=6.0
+folium>=0.17
+pandas>=2.1
+gunicorn>=22.0

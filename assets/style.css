@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #0b1220;
+  --panel: #121b2e;
+  --panel-2: #172238;
+  --line: #26344f;
+  --ink: #e6edf7;
+  --muted: #8fa0ba;
+  --fatal: #ff5a4f;
+  --autre: #5b8dc9;
+  --ambre: #f2b84b;
+  --ok: #4cc9a0;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif; font-size: 14px; line-height: 1.5;
+  font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased;
+}
+.app { max-width: 1480px; margin: 0 auto; padding: 0 28px 48px; }
+
+/* Bandeau du haut */
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.marque { font-weight: 600; letter-spacing: .02em; display: flex; align-items: center; gap: 10px; }
+.marque-point { width: 10px; height: 10px; border-radius: 50%; background: var(--fatal); box-shadow: 0 0 0 4px rgba(255,90,79,.18); }
+.puce { color: var(--muted); font-size: 12px; border: 1px solid var(--line); padding: 4px 12px; border-radius: 999px; }
+
+/* Message principal */
+.hero { padding: 44px 0 30px; }
+.kicker { margin: 0 0 14px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .09em; }
+.hero h1 { margin: 0; max-width: 24em; font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.1; font-weight: 700; letter-spacing: -.025em; }
+.lede { margin: 18px 0 0; max-width: 62ch; color: var(--muted); font-size: 1.05rem; }
+
+/* Filtres : barre collante */
+.filtres {
+  position: sticky; top: 0; z-index: 50; display: grid; gap: 16px 22px; align-items: end;
+  grid-template-columns: 1.7fr 1.1fr 1fr 1.1fr auto auto; padding: 14px 18px 12px; margin: 0 -18px 24px;
+  background: rgba(11,18,32,.94); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 10px;
+}
+.filtre { min-width: 0; }
+.filtres label { display: block; margin: 0 0 6px; color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; }
+.cases { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.cases label { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-size: 12.5px; color: var(--ink); text-transform: none; letter-spacing: 0; font-weight: 400; }
+.bouton {
+  padding: 9px 16px; background: transparent; color: var(--ink); border: 1px solid var(--line); border-radius: 8px;
+  font: inherit; font-weight: 500; cursor: pointer; align-self: end;
+}
+.bouton:hover { background: var(--panel-2); border-color: var(--muted); }
+:focus-visible { outline: 2px solid var(--autre); outline-offset: 2px; }
+
+/* Contrôles Dash (v3/v4) : on redéfinit ses variables de thème */
+:root {
+  --Dash-Fill-Inverse-Strong: #121b2e;
+  --Dash-Fill-Interactive-Strong: #5b8dc9;
+  --Dash-Fill-Interactive-Weak: rgba(91,141,201,.18);
+  --Dash-Fill-Primary-Hover: rgba(255,255,255,.06);
+  --Dash-Fill-Primary-Active: rgba(255,255,255,.10);
+  --Dash-Fill-Disabled: rgba(255,255,255,.12);
+  --Dash-Stroke-Strong: #5d6f8f;
+  --Dash-Stroke-Weak: #26344f;
+  --Dash-Text-Primary: #e6edf7;
+  --Dash-Text-Strong: #ffffff;
+  --Dash-Text-Weak: #8fa0ba;
+  --Dash-Text-Disabled: #6b7b96;
+  --Dash-Shading-Strong: rgba(0,0,0,.5);
+  --Dash-Shading-Weak: rgba(0,0,0,.35);
+}
+.filtres .dash-range-slider-input { display: none; }
+.filtre-annees { padding: 0 10px 14px; }
+
+/* Indicateurs */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 8px; }
+.kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px 6px; position: relative; overflow: hidden; }
+.kpi-libelle { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .07em; font-weight: 600; }
+.kpi-valeur { margin-top: 6px; font-size: 2.4rem; line-height: 1.05; font-weight: 700; letter-spacing: -.02em; }
+.kpi-valeur.rouge { color: var(--fatal); }
+.kpi-delta { margin-top: 4px; color: var(--muted); font-size: 12px; min-height: 18px; }
+.kpi-delta .baisse { color: var(--ok); font-weight: 600; }
+.kpi-delta .hausse { color: var(--ambre); font-weight: 600; }
+.kpi-spark { height: 44px; margin: 4px -6px 0; }
+
+/* Blocs */
+.bloc { margin-top: 44px; }
+.bloc-tete { display: flex; gap: 16px; align-items: baseline; margin-bottom: 16px; }
+.bloc-num { color: var(--fatal); font-weight: 700; font-size: 13px; letter-spacing: .08em; }
+.bloc h2 { margin: 0; font-size: 1.35rem; letter-spacing: -.01em; }
+.insight { margin: 4px 0 0; color: var(--muted); max-width: 90ch; }
+.grille { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.carte { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 16px 10px; min-width: 0; grid-column: span 12; }
+.carte h3 { margin: 0 0 2px; font-size: 1rem; font-weight: 600; }
+.lecture { margin: 0 0 10px; color: var(--muted); font-size: 12.5px; max-width: 70ch; }
+.span-4 { grid-column: span 4; } .span-5 { grid-column: span 5; } .span-7 { grid-column: span 7; } .span-8 { grid-column: span 8; }
+.carte-iframe { width: 100%; height: 520px; border: 0; border-radius: 8px; background: var(--bg); }
+.note { margin: 8px 0 4px; color: var(--muted); font-size: 12px; }
+.pied { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; max-width: 110ch; }
+
+/* Tableau */
+.dash-spreadsheet-container .dash-spreadsheet-inner td, .dash-spreadsheet-container .dash-spreadsheet-inner th { background-color: inherit; }
+.previous-next-container, .page-number { color: var(--muted); }
+
+@media (max-width: 1150px) {
+  .filtres { grid-template-columns: 1fr 1fr; position: static; margin: 0 0 24px; }
+  .filtre-annees { grid-column: 1 / -1; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+}
+@media (max-width: 640px) {
+  .app { padding: 0 16px 32px; }
+  .filtres { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: 1fr; }
+  .kpi-valeur { font-size: 2rem; }
+}
